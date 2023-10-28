@@ -1,0 +1,54 @@
+{% include 'base/header.html' %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-8 border p-3 main-section bg-white">
+        <div class="row hedding m-0 pl-3 pt-0 pb-3">
+            Product Details
+        </div>
+        <div class="row m-0">
+            <div class="col-lg-4 left-side-product-box pb-3">
+                <!-- given here dict_variable name from where image come -->
+                <img src="{{ objects1.anml_image.url }}" class="border p-3" width="200px;">
+            </div>
+            <div class="col-lg-8">
+                <div class="right-side-pro-detail border p-3 m-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <span><b>PET</b></span>
+
+                            <!-- also given here particular object details like name,rs,age,breed etc -->
+                            <p class="m-0 p-0" style="color:red;"><i>Name:</i> {{ objects1.anml_name }}</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="m-0 p-0 price-pro"><i>Rs.:</i> {{ objects1.anml_price }}</p>
+                            <hr class="p-0 m-0">
+                        </div>
+                        <div class="col-lg-12 pt-2">
+                            <h5><b>Product Detail</b></h5>
+
+                            <span></span>
+                            <hr class="m-0 pt-2 mt-2">
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="tag-section"><strong><i>Age:</i> {{ objects1.anml_age }} </strong></p>
+                            <p><strong><i>Breed Name:</i> {{ objects1.anml_breed }} </strong></p>
+                            <p><i>Description:- {{ objects1.anml_description }}</i></p>
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                            <div class="row">
+                                <div class="col-lg-6 pb-2">
+                                    <a href="{% url 'add_to_cart' objects1.id %}" class="btn btn-danger w-100">Add To Cart</a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <a href="#" class="btn btn-success w-100">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% include 'base/footer.html' %}

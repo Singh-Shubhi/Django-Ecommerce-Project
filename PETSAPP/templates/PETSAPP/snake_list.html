@@ -1,0 +1,27 @@
+{% include 'base/header.html' %}
+{% block content %}
+    <div class="container">
+        <h4 style="text-align:center;margin-top: 20px;margin-bottom: 20px;">SNAKE'S DATA</h4>
+        <div class="'row">
+            {% for obj in objects%}
+                <div class="col-lg-3">
+                <div class="card" style="min-height:200px; cursor:pointer;">
+                    
+                    <img src="{{ obj.anml_image.url }}" alt="Image will come here" class="card-img-top">
+                    <p><i><b>Name:-</b></i>{{ obj.anml_name }} </p>
+                    <p class="card-text"><i><b>Age:-</b></i>{{ obj.anml_age }}</p>
+                    
+                    <p><i><b>Species:-</b></i>{{ obj.anml_species }}</p>
+                    <p><i><b>Breed:-</b></i>{{ obj.anml_breed }}</p>
+                    <p><strong style="color:red;"><i>Price:-</i></strong>{{ obj.anml_price }}</p>
+                    <p><i><b>Description:-</b></i><i>{{ obj.anml_description }}</i></p>
+
+                </div>
+                </div>
+            {% endfor %}
+        
+
+        </div>
+    </div>
+{% endblock %}
+{% include 'base/footer.html' %}
